@@ -20,6 +20,10 @@ const checkUrlAccessibility = (url, callback) => {
   });
 };
 
+app.get('/', (req, res) => {
+  res.send('Hello from URL Status Server!');
+});
+
 app.post('/check-url', (req, res) => {
   const { url } = req.body;
 
@@ -38,3 +42,6 @@ app.post('/check-url', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports = app; // Export the app instance
+
